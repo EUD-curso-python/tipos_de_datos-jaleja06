@@ -122,7 +122,7 @@ apellidos_list2.extend(apellidos_list[56:71])
 
 """Invertir el orden actual de la variable `apellidos_list2`.
 """
-apellidos_list2.sort(reverse=True)
+apellidos_list2.reverse()
 #print(apellidos_list2)
 
 
@@ -195,19 +195,16 @@ var3 = apellidos_set3.issubset(apellidos_set1)
 """Crear la variable `apellidos_dict` usando la función `fromkeys` con la lista
 del 0 al 4 de la lista `apellidos_lista`.
 """
-#lis = apellidos_list[0:4]
-# print(lis)
-apellidos_dict = dict.fromkeys(apellidos_list[0:4])
-# print(apellidos_dict)
+
+apellidos_dict = dict.fromkeys(apellidos_list[0:5])
+print(apellidos_dict)
 
 """Agregar el siguiente diccionario: {"key1": 12, "key2": 24} al diccionario  
 `apellidos_dict`.
 """
+apellidos_dict.update({"key1": 12, "key2": 24})
 
-dicc = {"key1": 12, "key2": 24} 
-apellidos_dict.update(dicc)
-
-# print(apellidos_dict)
+print(apellidos_dict)
 
 """Asignar el valor del entero `34` a la llave "gonzalez" en el diccionario 
 `apellidos_dict`.
@@ -220,11 +217,12 @@ guardarlo en la variable `apellido_gonzalez`.
 """
 apellido_gonzalez = apellidos_dict.pop('gonzalez')
 #print(apellido_gonzalez)
+#print(apellidos_dict)
 
 """Eliminar el último elemento del diccionario `apellidos_dict`.
 """
 apellidos_dict.popitem()
-# print(apellidos_dict)
+#print(apellidos_dict)
 
 """Sacar el valor de la llave "no_existe" del diccionario `apellidos_dict` y 
 guardarlo en la variable `apellido_none`.
