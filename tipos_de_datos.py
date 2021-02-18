@@ -57,13 +57,9 @@ apellido2 = apellido.replace(' ','')
 """Guardar en `apellido_es_mayuscula` si `apellido2` es un string que contiene 
 solo letras mayúsculas.
 """
-# print(apellido2.isupper())
-if apellido2.isupper() == True:
-  apellido_es_mayuscula = apellido2
-else: 
-  apellido_es_mayuscula = ''
 
-# print(apellido_es_mayuscula)
+apellido_es_mayuscula = apellido2.isupper()
+#print(apellido_es_mayuscula)
 
 
 """Convertir la variable `apellido2` de mayúsculas a minúsculas si está en mayúsculas, 
@@ -87,11 +83,7 @@ a_in_apellido = apellido2.count('a')
 """Crear variable `apellido_end_ez` que contenga si la variable `apellido2` 
 termina con el string `"ez"`.
 """
-if apellido2.endswith('ez') == True:
-  apellido_end_ez = apellido2
-else: 
-  apellido_end_ez = ''
-
+apellido_end_ez = apellido2.endswith('ez') 
 #print(apellido_end_ez)
 
 """Crear tupla llamada `apellidos_tuple` que contenga los elementos desde el 49 
@@ -125,9 +117,8 @@ apellidos_list2.remove('  MORALES')
 elemento 56 al 70 de la variable `apellidos_list`.
 """
 
-# print(apellidos_list[55:71])
-apellidos_list2 = apellidos_list2+apellidos_list[55:71]
-#print(apellidos_list2+apellidos_list[55:71])
+apellidos_list2.extend(apellidos_list[56:71])
+#print(apellidos_list2)
 
 """Invertir el orden actual de la variable `apellidos_list2`.
 """
@@ -140,10 +131,10 @@ variable `apellidos_list`, y crear variable `apellidos_set2` con elementos del
 62 al 76 de la variable `apellidos_list`.
 """
 
-apellidos_set1 = apellidos_list[55:67]
+apellidos_set1 = apellidos_list[56:67]
 # print(apellidos_set1)
 
-apellidos_set2 = apellidos_list[61:77]
+apellidos_set2 = apellidos_list[62:77]
 # print(apellidos_set2)
 
 """Agregar a variable `apellidos_set1` el elemento en la pocisión 67 de la 
@@ -204,9 +195,9 @@ var3 = apellidos_set3.issubset(apellidos_set1)
 """Crear la variable `apellidos_dict` usando la función `fromkeys` con la lista
 del 0 al 4 de la lista `apellidos_lista`.
 """
-lis = apellidos_list[0:4]
+#lis = apellidos_list[0:4]
 # print(lis)
-apellidos_dict = dict.fromkeys(lis)
+apellidos_dict = dict.fromkeys(apellidos_list[0:4])
 # print(apellidos_dict)
 
 """Agregar el siguiente diccionario: {"key1": 12, "key2": 24} al diccionario  
@@ -227,8 +218,8 @@ apellidos_dict['gonzalez']=34
 """Sacar el valor de la llave "gonzalez" del diccionario `apellidos_dict` y 
 guardarlo en la variable `apellido_gonzalez`.
 """
-apellido_gonzalez = apellidos_dict.get('gonzalez')
-# print(apellido_gonzalez)
+apellido_gonzalez = apellidos_dict.pop('gonzalez')
+#print(apellido_gonzalez)
 
 """Eliminar el último elemento del diccionario `apellidos_dict`.
 """
@@ -239,5 +230,5 @@ apellidos_dict.popitem()
 guardarlo en la variable `apellido_none`.
 """
 
-apellido_none = apellidos_dict.get('no_existe')
+apellido_none = apellidos_dict.pop('no_existe',None)
 # print(apellido_none)
